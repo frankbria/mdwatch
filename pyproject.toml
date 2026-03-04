@@ -1,0 +1,28 @@
+[project]
+name = "mdwatch"
+version = "0.1.0"
+description = "Live terminal markdown viewer for showboat demos"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "textual>=0.80.0",
+    "watchfiles>=1.0.0",
+    "click>=8.1.0",
+]
+
+[project.scripts]
+mdwatch = "mdwatch.app:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+]
